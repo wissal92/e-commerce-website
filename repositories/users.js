@@ -29,6 +29,8 @@ class UserRepository{
 
         await this.writeAll(records);
 
+        return atts
+
     }
 
     async writeAll(records){
