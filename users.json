@@ -21,5 +21,15 @@
     "email": "himini@gmail.com",
     "password": "123456",
     "id": "5970c15d"
+  },
+  {
+    "email": "yasmin.ouarsafi@gmail.com",
+    "password": "5c973f05c3ecfbc6408e1cfc9e2364126c5f6f049fd554b60dc59284ba572869e19aeb502fba87ef88325a488eefaa328fc3d641021caebe14294cd03c082b97.9b3ad7862007f700",
+    "id": "b00b1e79"
+  },
+  {
+    "email": "ruby@gmail.com",
+    "password": "a6168ecc2a3d2d560bcf2a8e386f8e847c69a51653486b8be89bb79fbbd554523b9bd5cbcb994062595b4876ec8c3481e1582b61b9c91df4ed9b9ac6e44fc2de.a48e69a0a81829f7",
+    "id": "25f87fd0"
   }
 ]
