@@ -21,7 +21,9 @@ router.get('/admin/products/new', requireAuth, (req, res) => {
     res.send(productsTemplate({}));
 });
 
-router.post('/admin/products/new', requireAuth, upload.single('image'), [requireTitle, requirePrice], handleErrors(productsTemplate), async(req, res) => {
+router.post('/admin/products/new', requireAuth, upload.single('image'), [requireTitle, requirePrice], 
+handleErrors(productsTemplate)
+, async(req, res) => {
 
     const image = req.file.buffer.toString('base64');
     const {title, price} = req.body;
@@ -40,7 +42,12 @@ router.get('/admin/products/:id/edit', requireAuth, async (req, res) => {
     res.send(productEditTemplate({product}));
 });
 
-router.post('/admin/products/:id/edit', requireAuth,upload.single('image'),[requireTitle, requirePrice], handleErrors(productEditTemplate), async (req, res) => {
+router.post('/admin/products/:id/edit', requireAuth,upload.single('image'),[requireTitle, requirePrice], 
+handleErrors(productEditTemplate, async req =>{
+    const product = await productsRepo.getOne(req.params.id);
+    return {product};
+})
+, async (req, res) => {
     const changes = req.body;
 
     if (req.file) {
