@@ -64,4 +64,10 @@ handleErrors(productEditTemplate, async req =>{
 
 });
 
+router.post('/admin/products/:id/delete', requireAuth, async(req, res) =>{
+    await productsRepo.delete(req.params.id);
+    res.redirect('/admin/products');
+})
+
+
 module.exports = router;
